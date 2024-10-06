@@ -66,10 +66,6 @@ header{
   }
 
 
-  #mainnav2{
-    display: none;
-  }
-
   #mainnav>li>ul>li>a{
     display: block;
     font-family: "Roboto", sans-serif;
