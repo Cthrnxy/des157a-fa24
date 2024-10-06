@@ -34,7 +34,7 @@ header{
   #mainnav{
     position: absolute;
     right: 20px;
-    top: 30px;  
+    top: 15px;  
   }
 
   #mainnav>li>a>i{
@@ -42,7 +42,7 @@ header{
     font-size: 1.5em;
   }
 
-  #mainnav li ul{
+  #mainnav>li>ul{
     position: absolute;
     right: -9999px;
   }
@@ -202,7 +202,7 @@ header{
     
   }
 
-  #Final li{
+  #Final ul{
     border: 2px solid black;
     background-color: #F15A24;
     padding: 25px;
@@ -215,7 +215,7 @@ header{
     margin: 20px;
   }
 
-  #Final li a{
+  #Final ul li a{
     font-family:"Caveat", cursive ;
     color: white;
     text-decoration: none;
@@ -257,37 +257,7 @@ footer{
     header{
         display: flex;
     }
-    #mainnav2{
-        display: block;
-        color: black;
-    }
-
-    #mainnav2{
-        display: block;
-        position: absolute;
-        right: 30px;
-        bottom: 15px;
-      }
     
-      #mainnav2 ul{
-        display: flex;
-      }
-    
-      #mainnav2 ul li{
-        display: block;
-      }
-    
-      #mainnav2 ul li a{
-        text-decoration: none;
-        font-family: "Roboto", sans-serif;
-        color: black;
-        margin: 10px;
-        font-style: normal;
-      }
-
-      #mainnav2 ul li a:hover{
-        font-style: italic;
-      }
 
     #mainnav{
         display: none;
