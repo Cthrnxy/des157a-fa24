@@ -22,10 +22,10 @@ header{
     padding: 0;
   }
 
-  header h1 a{
+  header h3 a{
     font-family: "Caveat", cursive;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 2em;
     margin: 20px;
     color: black;
     font-weight: 200;
@@ -99,129 +99,117 @@ header{
     font-size: 2em;
     font-weight: 700;
   }
-
-  #studio{
-    background-color: white;
+/* ------------------------------------------------ */
+  section{
     display: block;
-    border:solid black 2px;
-    margin: 20px;
-    padding: 20px;
-  }
-
-  #studio h1{
-    font-family:"Libre Baskerville", serif ;
-    color: #000FC3;
-    
-
-  }
-
-  #studio ul{
-    list-style-type: none;
-    border:solid black 2px;
-    background-color:#000FC3 ;
-    padding: 20px;
-    height: 70%;
-  }
-
-  #studio ul #ex{
-    font-family:"Libre Baskerville", serif;
-    font-size:1.25em;
-    margin:  10px;
-    color: #FFDD21;
-  }
-
-  #studio>ul>#ex>ul{
-    background-color: white;
-    color: black;
-    font-family:"Caveat", cursive ;
+    border: solid 2px black;
+    height: 500px;
     margin: 10px;
-  }
-
-  #studio>ul>#ex>ul>li>a{
-    text-decoration: none;
-    color: black;
-  }
-
-  #studio>ul>#ex>ul>li>a:hover{
-    text-decoration: underline;
-  }
-
-  #studio>ul>li>a{
-    font-family:"Caveat", cursive ;
-    font-size: 1.5em;
-    text-decoration: none;
-    color: white;
-  }
-
-  #studio ul li a:hover{
-    text-decoration: underline;
-  }
-
-  #rd {
-    display: block;
-    border: 2px solid black;
     background-color: white;
-    color: #006837;
-    margin: 20px;
-    padding: 20px;
   }
 
-  #rd ul{
-    border: 2px solid black;
-    background-color: #006837;
-    padding: 20px;
-    height: 70%;
-  }
-
-  #rd h1{
-    margin: 20px;
-  }
-
-  #rd ul li a{
-    font-family:"Caveat", cursive ;
-    color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-  }
-
-  #rd ul li a:hover{
-    text-decoration: underline;
-  }
-
-  #Final{
+  section div{
+    background-color: rgb(86, 65, 65);
     display: block;
-    border: 2px solid black;
-    background-color: white;
-    color: #F15A24;
+    border: solid 2px black;
+    height: 350px;
     margin: 20px;
-    padding: 20px;
-    
   }
 
-  #Final ul{
-    border: 2px solid black;
-    background-color: #F15A24;
-    padding: 25px;
+  section div:hover .photo{
+    animation: fadeIn 1s forwards;
+  }
+
+  .photo{
+    display: block;
+    width: auto;
+    height: 94%;
+    margin: auto;
+    padding: 10px;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+ 
+  @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
+
+  section h2{
+    margin: 20px;
+  }
+
+  section div ul li{
     list-style-type: none;
-    height: 70%;
-    margin-top:15px ;
   }
 
-  #Final h1{
-    margin: 20px;
-  }
-
-  #Final ul li a{
+  section div ul li a{
     font-family:"Caveat", cursive ;
-    color: white;
-    text-decoration: none;
     font-size: 1.5em;
+    list-style-type: none;
+    text-decoration: none;
+    color: white;
   }
 
-#Final li a:hover{
+  section div ul li a:hover{
     text-decoration: underline;
+  }
+
+  section h2{
+    font-size: 2em;
+  }
+/* -------------------------------------------- */
+#studio>.polariod>.photo{
+  background-color: #000FC3;
 }
 
+#studio h2{
+  color: #000FC3;
+}
+
+  #ex{
+    font-family: "Libre Baskerville", serif;
+    color: #FFDD21;
+    font-size: 1.25em;
+  }
+
+  #ex>ul{
+    background-color: white;
+    list-style-type: none;
+    border: solid black 2px;
+    margin: 10px;
+    
+  }
+
+  #ex>ul>li>a{
+    color: black;
+    font-size: 1em;
+  }
+
+/* -------------------------------------------- */
+#rd>.polariod>.photo{
+  background-color: #F15A24;
+}
+
+#rd h2{
+  color: #F15A24;
+}
+
+/* -------------------------------------------- */
+#Final>.polariod>.photo{
+  background-color: #006837;
+}
+
+#Final h2{
+  color: #006837;
+}
+
+/* -------------------------------------------- */
 footer{
     display: flex;
     background-color: #FFDD21;
