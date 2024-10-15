@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment2</title>
+</head>
+<body>
+    <h1>JS Experimentation - Functions & DOM</h1>
+    <script>
+
+        var mycolor=['red','blue','yellow','green','pink','green','orange'];
+
+        function letter(color) {
+            return availableColors.includes(color.toLowerCase());
+        }
+
+        function color(){
+            
+            var userColor=prompt(`Please choose your favourite color.${mycolor}${''}`);
+            if(mycolor.includes(userColor.toLocaleLowerCase())){
+                document.body.style.backgroundColor = userColor;
+
+            }else{
+                alert('Sorry,the color you chose is not in the list');
+            }
+        }
+        color();
+
+
+    </script>
+</body>
+</html>
