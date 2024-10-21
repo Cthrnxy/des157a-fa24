@@ -86,6 +86,11 @@ article>p{
     display: flex;
 }
 
+article div{
+    margin: 10px;
+    display: block;
+}
+
 article div a{
     background-color: #c63f3f;
     padding: 10px;
@@ -95,7 +100,6 @@ article div a{
     border-radius:15px ;
     font-family:"Nunito", serif ;
     font-size: 15px;
-    margin-top: 20px;
 }
 
 article div a:hover{
@@ -131,3 +135,6 @@ footer{
   }
   
 
+#journal3{
+    display: none;
+}
