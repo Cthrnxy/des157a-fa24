@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #4560B0, #4B70B8, #5068C0);
+    position: relative;
+    height: 100vh;
+    background-image: url(image/background.png);
+    background-size: cover;
+}
+
+.whale {
+    position: absolute;
+    bottom: 30%;
+    top: 100px;
+    left: 100vw;
+    width: 100px;
+    height: 50px;
+    background: url('whale.png') no-repeat;
+    background-size: contain;
+    animation: swim 10s linear infinite, scale 5s ease-in-out infinite alternate;
+}
+
+#bubble1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: float 5s linear infinite;
+}
+
+#bubble2 {
+    position: absolute;
+    left: 25%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: float 5s linear infinite;
+}
+
+#bubble3 {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: float 5s linear infinite;
+}
+
+#bubble4 {
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: float 5s linear infinite;
+}
+
+#bubble5 {
+    position: absolute;
+    bottom: 0;
+    left: 75%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    animation: float 5s linear infinite;
+}
+
+@keyframes swim {
+    0% { left: 100vw; }
+    100% { left: -150px; }
+}
+
+@keyframes scale {
+    0% { transform: scale(1); }
+    25%{transform: scale(1.25);}
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1.5); }
+}
+
+@keyframes float {
+    from { bottom: 0; opacity: 1; }
+    to { bottom: 100%; opacity: 0; }
+}
+
+
+main{
+    display: block;
+    background-color: rgba(167, 224, 238, 0.3);
+    position: relative;
+    top: 20%;
+    left: 17%;
+    padding: 20px;
+    width: 60%;
+    border-radius: 20px;
+
+
+}
+
+main section h1{
+    font-family:"Kalam", cursive ;
+    font-size: 30px;
+    color: #132452;
+}
+
+main section p{
+    font-family:"Nunito Sans", sans-serif ;
+    font-size: 20px;
+    color: #102727;
+    text-emphasis: none;
+    line-height: 1.5;
+}
+
+main form{
+    display: block;
+}
+
+main form label{
+    font-family:"Kalam", cursive ;
+    font-size: 25px;
+    color: #132452;
+    margin-bottom: 20px;
+}
+
+main form #madlib{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 10px; 
+    margin-top:10px ;
+
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+main button{
+    grid-column: span 5;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4560B0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family:"Nunito Sans", sans-serif ;
+    box-shadow: 2px 2px 2px rgb(63, 50, 105);
+}
+
+main button:hover{
+    grid-column: span 5;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #6085f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family:"Nunito Sans", sans-serif ;
+    box-shadow: 2px 2px 2px rgb(63, 50, 105);
+}
