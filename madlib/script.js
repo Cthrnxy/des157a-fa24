@@ -58,7 +58,7 @@
         const errorId=formData[emptyfields[0]].id;
         
         const errorText=`Please fill out this field ${errorId}`;
-        alert('errorText');
+        alert(errorText);
         /* madlib.innerHTML=errorText; */
         document.querySelector(`#${errorId}`).focus();
     }
@@ -66,13 +66,17 @@
     function makeMadlib(words){
         
 
-        const myText=  `Here are the words: ${words[0]},${words[1]},${words[2]} and ${words[3]}`;
-        madlib.innerHTML=myText;
-        for(const eachField of formData){
-            eachField.value='';
+        const blanks = document.querySelectorAll(".blank");
+        if (words.length <= blanks.length) {
+            words.forEach((word, index) => {
+                blanks[index].textContent = word;
+            });
+            
+            document.querySelector('#overlay').className = 'showing';
+            
+        } else {
+            console.error(" there is a error");
         }
-
-        
     }
 
 
