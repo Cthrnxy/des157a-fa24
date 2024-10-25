@@ -78,7 +78,13 @@
             console.error(" there is a error");
         }
     }
+    document.querySelector('.tryagain').addEventListener('click', function(event) {
+        event.preventDefault(); 
 
+        document.querySelector('#overlay').className = 'hidden'; 
+        myForm.reset();
+        blanks.forEach(blank => blank.textContent = '');
+    });
 
 
 
