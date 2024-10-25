@@ -175,3 +175,41 @@ main button:hover{
     font-family:"Nunito Sans", sans-serif ;
     box-shadow: 2px 2px 2px rgb(63, 50, 105);
 }
+
+
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+#overlay {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity,visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+#overlay article {
+    box-sizing: border-box;
+    background-color:rgba(167, 224, 238);
+    border: solid white 5px;
+    border-radius: 20px;
+    padding: 20px;
+    width: 65%;
+    height: 80vh;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

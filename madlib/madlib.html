@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 
 </head>
 <body>
@@ -28,29 +29,43 @@
         <p>Let's make a story for Alice</p>
         <div id="madlib">
             <label for="userput1"></label>
-             <input type="text" name="adj1" id="userput1" placeholder="1.Enter a adjective">
+             <input type="text" name="noun1" id="userput1" placeholder="1.Enter a noun">
              <label for="userput2"></label>
-             <input type="text" name="adj2" id="userput2" placeholder="2.Enter a adjective">
+             <input type="text" name="adj1" id="userput2" placeholder="2.Enter a adjective">
              <label for="userput3"></label>
-             <input type="text" name="noun" id="userput3" placeholder="3.Enter a noun">
+             <input type="text" name="adj2" id="userput3" placeholder="3.Enter an adjective">
              <label for="userput4"></label>
-             <input type="text" name="noun" id="userput4" placeholder="4.Enter same noun">
+             <input type="text" name="adv" id="userput4" placeholder="4.Enter same adverb">
              <label for="userput5"></label>
-             <input type="text" name="adj" id="userput5" placeholder="5.Enter a adjective">
+             <input type="text" name="verb" id="userput5" placeholder="5.Enter a past tense verb">
              <label for="userput6"></label>
              <input type="text" name="noun" id="userput6" placeholder="6.Enter same noun">
              <label for="userput7"></label>
-             <input type="text" name="verb" id="userput7" placeholder="7.Enter a verb">
+             <input type="text" name="verb" id="userput7" placeholder="7.Enter a past tense verb">
              <label for="userput8"></label>
              <input type="text" name="verb" id="userput8" placeholder="8.Enter a verb">
              <label for="userput9"></label>
-             <input type="text" name="verb" id="userput9" placeholder="9.Enter a verb">
+             <input type="text" name="verb" id="userput9" placeholder="9.Enter a past tense verb">
              <label for="userput10"></label>
-             <input type="text" name="adj" id="userput10" placeholder="10.Enter a adjective">
+             <input type="text" name="noun" id="userput10" placeholder="10.Enter a noun">
         </div>
-             <button type="submit">Submit</button>    
+             <button type="submit"class="open">Submit</button>    
     </form>
     </main>
+    <section id="overlay" class="hidden">
+        <article>
+        <h2>Story for Alice</h2>
+            <p>In the vast <span class="blank"></span>, there lived a whale named Alice. She was always swimming alone, as her <span class="blank"></span> song was different from other whales, and no one could hear her.</p>
+
+            <p>One day, Alice met a <span class="blank"></span> dolphin. The dolphin asked <span class="blank"></span>, “Why are you always singing alone?” Alice <span class="blank"></span>, “Because no <span class="blank"></span> can understand me.”</p>
+            
+            <p>The dolphin <span class="blank"></span> and said, “Don’t worry, I can try to <span class="blank"></span>!” So, they <span class="blank"></span> together and sang along. Although the dolphin couldn’t fully understand Alice’s song, it stayed by her side, making sure she never felt alone.</p>
+            
+            <p>From then on, Alice’s song had a new, happier <span class="blank"></span>.</p>
+            <button class="tryagain">Try again</button>
+        </article>
+    </section>
+    
 
 </body>
 </html>
