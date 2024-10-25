@@ -215,8 +215,7 @@ main button:hover{
     transform: translate(-50%, -50%);
 }
 
-.blank{
+.blank,input{
     font-family:"Kalam", cursive ;
     font-size: 25px;
-    text-decoration: underline;
 }
