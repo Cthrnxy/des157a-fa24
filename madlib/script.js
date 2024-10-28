@@ -79,11 +79,14 @@
         }
     }
     document.querySelector('.tryagain').addEventListener('click', function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
+        location.reload(); 
+    });
 
-        document.querySelector('#overlay').className = 'hidden'; 
-        myForm.reset();
-        blanks.forEach(blank => blank.textContent = '');
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            overlay.className = 'hidden';
+        }
     });
 
 
