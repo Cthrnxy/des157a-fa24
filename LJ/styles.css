@@ -133,5 +133,11 @@ footer{
     color: white;
     margin-right: 10px;
   }
-  
 
+  figure{
+    margin: 0;
+  }
+
+  container figure figcaption{
+    text-align: center;
+  }
