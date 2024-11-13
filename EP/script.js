@@ -69,7 +69,7 @@
                 } else if (myphotos[currentImage] === 'tkt1.png') {
                     photos.src = 'images/guiyang.jpg';
                 } else if (myphotos[currentImage] === 'tkt3.png') {
-                    photos.src = 'images/chengdu.png';
+                    photos.src = 'images/chengdu.PNG';
                 }
                 photos.style.opacity = 1; 
             }, 500); 
