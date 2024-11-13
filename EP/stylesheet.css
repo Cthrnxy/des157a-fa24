@@ -2,44 +2,165 @@ html{
     background-color: #dfe1dc;
 }
 
-.slider {
-    position: relative;
-    width: 100%;
-    max-width: 600px; 
-    margin: auto;
-    overflow: hidden;
-  }
+.zcool-xiaowei-regular {
+  font-family: "ZCOOL XiaoWei", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.crimson-text-regular {
+  font-family: "Crimson Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header{
+  display: flex;
+  justify-content: end;
+  margin-right: 100px;
+}
+
+header h1{
+  font-family:"ZCOOL XiaoWei", sans-seri ;
+  font-size: 100px;
+  color: #8ac0de;
+  position: absolute;
+}
+
+header h2{
+  font-family: "Playwrite BE VLG", cursive;
+  font-size: 50px;
+  color:#e1d2a8;
+  position: relative;
+  top: 70px;
+  left: -10px;
+  z-index: 1;
+}
+
+article{
+  display: block;
+  margin: auto;
+}
+
+article p{
+  text-align: center;
+  line-height: 50px;
+}
+
+#button{
+  width: 550px;
+  display: flex;
+}
+
+#button a{
+  display: block;
+  flex: 1;
+  background-color: #84bad6;
+  height: 50px;
+  color: #dfe1dc;
+  font-size: 1em;
+  font-family:"Sriracha", cursive ;
+  text-decoration: none;
+  padding: 10px;
+  text-align: center;
+
+
+}
+
+#button a:hover{
+  background-color: #f4e0a9;
+  color: #0b3857;
+}
+
+.fadeinimg{
+  animation: fadein 700ms;
+}
+
+@keyframes fadein{
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
+
+#ticket{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 100px;
+  box-sizing: border-box;
   
-  .slides .slide {
-    display: none; 
-    width: 100%;
-  }
+}
+
+#ticket article{
+  display: block;
+  margin: 100px;
   
-  img {
-    width: 100%;
-    display: block;
-  }
-  
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-  }
-  
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-  }
+}
+
+#ticket article p{
+  font-family:"Sriracha", cursive ;
+  font-size: 25px;
+  padding: 0;
+}
+
+#train, #scene1 {
+  display: block;
+  max-width: 50vw;
+}
+
+
+.windowscene{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#train{
+  position: absolute;
+  display: flex;
+}
+.scene{
+  position: relative;
+  z-index: -1;
+  margin:100px 220px 220px 215px ;
+}
+
+.scene img{
+  width: 500px;
+
+}
+
+
+
+/* zoom in */
+
+ .slides{
+  padding: 2px;
+  background-color: #bbc0c1;
+  border-radius: 30px;
+}
+
+
+#slides{
+  width: 550px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+ #myimage {
+  transition: transform 3s ease;
+  transform-origin: bottom right;
+}
+
+.bottomright {
+  transform: scale(2);
+}
+
+
+#photos {
+    transition: opacity 1s ease; 
+    opacity: 1;
+}
+
+

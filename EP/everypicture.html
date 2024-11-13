@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Playwrite+BE+VLG:wght@100..400&family=Sriracha&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <script src="script.js" defer></script>
     <title>Every pictures</title>
 </head>
@@ -12,32 +17,28 @@
     <h1>旅行的意义</h1>
     <h2>Traval is Meaningful</h2>
     </header>
+    <section id="ticket">
     <article>
-        <p>Scan your ticket to start your trip!</p>
-        <p>Scan the QR code in the ticket</p>
-    </article>
-    <div class="slider">
-        <div class="slides">
-            <div class="slide" id="slide1">
-                <img src="images/tkt1.png" alt="tkt1">
-            </div>
-            <div class="slide" id="slide2">
-                <img src="images/tkt2.png" alt="tkt2">
-            </div>
-            <div class="slide" id="slide3">
-                <img src="images/tkt3.png" alt="tkt3">
-            </div>
-
+        <p>Here are your tickets for your trip!<br>Scan the QR code in the ticket</p>
+        <div class="slides" id="slides">
+            <img src="images/tkt1.png" alt="tkt"  id="myimage">
+            <div id="bottomright"></div>
         </div>
+        <p id="button">
+            <a href="#" id="previous"><i class="fa-solid fa-angle-left"></i> PREVIOUS TRIP</a>
+            <a href="#" id="next">NEXT TRIP <i class="fa-solid fa-angle-right"></i></a>
+        </p>
+    </article>
+<section id="windowscene"> 
+<div id="train">
+    <img src="images/chechuang.png" alt="window">
+</div>
+    <div class="scene" id="scene">
+        <img src="images/sky.png" alt="sky" id="photos">
     </div>
-    <a href="">NEXT TRIP</a>
-    <div>
-        <img src="images/chechuang.png" alt="window">
-    </div>
-    <section id="scene">
-
-
-    </section>
+</section>   
+</section>
+    
  
 </body>
 </html>
