@@ -1,0 +1,195 @@
+body{
+    background-image:url(images/background.png);
+        margin: 0; 
+        padding: 0;
+        background-position: center; 
+        background-repeat: no-repeat;
+        height: 80vh;
+        background-color: #1F2060;
+        
+}
+
+section article h1{
+    font-family: "Knewave", system-ui;
+    color: aliceblue;
+    font-size:4em;
+    font-weight: 80;
+    text-align: center;
+    padding: 50px;
+
+}
+
+#intro{
+    display: flex;
+    justify-content: center;
+}
+
+#intro div{
+    display: block;
+    width: 1000px;
+    font-family:"Sour Gummy", sans-serif ;
+    font-size: 20px;
+    line-height: 40px;
+    color: aliceblue;
+    padding-bottom: 30px;
+}
+
+#player{
+    display: flex;
+}
+
+#player button{
+    display: block;
+    background-color: #596C9C;  
+    font-family: "Kablammo", system-ui;
+    font-size: 2em;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    border-radius: 100%;
+    margin:auto;
+    text-decoration: none;
+    color: #1F2060;
+    transition: background-color 1s ease-in,color 1s ease-in;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#player button:hover{
+background-color: rgb(28, 28, 28);
+color: aliceblue;
+}
+
+#piggame{
+    display: none;
+}
+
+
+
+#piggame #game{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#piggame #game p{
+    display: block;
+    font-size: 2em;
+    font-family: "Sour Gummy", sans-serif;
+    background-color: #596C9C;
+    padding: 20px;
+    border-radius: 15px;
+    color: #10102e;
+    border: solid 2px #10102e;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    justify-self: flex-start;
+    
+}
+
+#piggame #game #table{
+    position: absolute;
+    top: 150px;
+}
+
+#piggame #game .animation{
+    position: relative;
+    z-index: 1;
+    bottom: -250px;
+}
+
+
+#piggame #game #dice1{
+    position: fixed;
+    bottom: -800px;
+    z-index: 1;
+    left: 1000px;
+}
+
+#piggame #game #dice2{
+    position: fixed;
+    bottom: -800px;
+    z-index: 1;
+    left: 800px;
+}
+
+#piggame #game p{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.hidden{
+    display: none;
+}
+
+
+#piggame div{
+    display: block;
+    background-color: #596C9C;
+    padding: 10px;
+    width: 350px;
+    border-radius: 50px;
+    border: solid #1F2060 2px;
+    position: fixed;
+    z-index: 2;
+    margin-top: 50px;
+    position: fixed;
+    right: 100px;
+    text-align: center;
+}
+
+
+#piggame div h2{
+    font-family: "Knewave", system-ui;
+    font-size: 2em;
+    font-weight: 10;
+    color: #10102e;
+}
+
+#piggame div button{
+    padding: 15px;
+    background-color: #1f2060;
+    border-radius: 20px;
+    font-family: "Sour Gummy", sans-serif;
+    color: wheat;
+    font-size: 15px;
+}
+
+#piggame div p{
+    border-radius: 20px;
+    font-family: "Sour Gummy", sans-serif;
+    color: #10102e;
+    font-size: 1em;
+}
+
+/* #piggame #game{
+    display: none;
+} */
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* 骰子图片变化的动效 */
+#dice1, #dice2 {
+    animation: shakeDice 0.5s ease-in-out;
+}
+
+@keyframes shakeDice {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0); }
+}
