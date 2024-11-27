@@ -90,35 +90,40 @@ color: aliceblue;
 }
 
 #piggame #game #table{
-    position: absolute;
-    top: 150px;
+    position: fixed;
+    top: 200px;
+    left: 1%;
+    z-index: -1;
+
 }
 
 #piggame #game .animation{
-    position: relative;
-    z-index: 1;
-    bottom: -250px;
+    position: fixed;
+    z-index: 0;
+    left: 50%;
+    top: 280px;
 }
 
 
 #piggame #game #dice1{
     position: fixed;
-    bottom: -800px;
-    z-index: 1;
-    left: 1000px;
+    bottom: -900px;
+    z-index: 0;
+    left: 1200px;
 }
 
 #piggame #game #dice2{
     position: fixed;
-    bottom: -800px;
-    z-index: 1;
-    left: 800px;
+    bottom: -900px;
+    z-index: 0;
+    left: 1000px;
 }
 
 #piggame #game p{
     position: fixed;
-    z-index: 1;
-    top: 0;
+    z-index: 0;
+    top: 950px;
+    left: 55%;
 }
 
 .hidden{
@@ -134,7 +139,7 @@ color: aliceblue;
     border-radius: 50px;
     border: solid #1F2060 2px;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
     margin-top: 50px;
     position: fixed;
     right: 100px;
@@ -165,6 +170,11 @@ color: aliceblue;
     font-size: 1em;
 }
 
+
+#result{
+    position: fixed;
+    left: 300px;
+}
 /* #piggame #game{
     display: none;
 } */

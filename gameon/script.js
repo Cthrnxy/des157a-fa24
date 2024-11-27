@@ -14,9 +14,11 @@
         scores: [0, 0],
         roll1: 0,
         roll2: 0,
-        currentPlayerIndex: 0,
+        currentPlayerIndex: 0, // 0: Alice, 1: Cheshire Cat
         gameEnd: 29,
     };
+
+    let animationInterval;
 
     function switchScene(targetPlayer) {
         sectionIntro.classList.add('hidden');
@@ -29,107 +31,146 @@
     }
 
     function startGame(player) {
-        const isAlice = player === 'Alice'; // 判断点击的角色是否是 Alice
-        const characterImage1 = isAlice ? 'cat1.png' : 'alice1.png'; // 点击 Alice 显示 Cheshire Cat
-        const characterImage2 = isAlice ? 'cat2.png' : 'alice2.png'; // 第二帧图片
+        const playerIndex = gameData.players.indexOf(player);
+        gameData.currentPlayerIndex = playerIndex;
+
+        updateGameScreen();
+        updateCharacterAnimation();
+        bindButtons();
+    }
+
+    function updateGameScreen() {
+        const currentPlayer = gameData.players[gameData.currentPlayerIndex];
+        const isAliceTurn = gameData.currentPlayerIndex === 0;
 
         sectionPigGame.innerHTML = `
             <div>
                 <h2>Game Start</h2>
                 <button id="quit">Wanna Quit?</button>
-                <p id="currentPlayer">Roll the dice for ${player}</p>
+                <p id="currentPlayer">Roll the dice for ${currentPlayer}</p>
                 
                 <button id="rollDice">Roll the Dice</button>
-                <p id="score">Scores: Alice - 0, Cheshire Cat - 0</p>
+                <button id="pass">Pass Turn</button>
+                <p id="score">Scores: Alice - ${gameData.scores[0]}, Cheshire Cat - ${gameData.scores[1]}</p>
+                <p id="message"></p>
 
                 <section id="game">
-                    <p>${isAlice ? '&#x1F63C Cheshire Cat' : '&#x1F469 Alice'}</p>
-                    <img src="images/${characterImage1}" alt="${isAlice ? 'Cheshire Cat' : 'Alice'}" id="characterImage" class="animation" width="300" height="350">
-                    <img src="images/dice1.png" alt="Dice 1" id="dice1" width="100" height="100">
-                    <img src="images/dice1.png" alt="Dice 2" id="dice2" width="100" height="100">
+                    <p id="characterName">${isAliceTurn ?  '&#x1F469 Alice':'&#x1F63C Cheshire Cat'}</p>
+                    <img src="images/alice1.png" alt="Character" id="characterImage" class="animation" width="300" height="350">
+                        <img src="images/dice1.png" alt="Dice 1" id="dice1" width="100" height="100">
+                        <img src="images/dice1.png" alt="Dice 2" id="dice2" width="100" height="100">
                     <img src="images/table.png" alt="table" id="table">
                 </section>
             </div>
         `;
 
-        // 开始动画效果
-        startAnimation(characterImage1, characterImage2);
-
-        bindDiceRoll();
-        document.querySelector('#quit').addEventListener('click', () => location.reload());
+        bindButtons(); 
     }
 
-    function startAnimation(image1, image2) {
+    function updateCharacterAnimation() {
         const characterImage = document.querySelector('#characterImage');
         let toggle = true;
 
-        // 每隔 500ms 切换图片，形成两帧动画
-        setInterval(() => {
+        clearInterval(animationInterval); 
+
+        
+        const isAliceTurn = gameData.currentPlayerIndex === 0;
+        const image1 = isAliceTurn ? 'cat1.png' : 'alice1.png';
+        const image2 = isAliceTurn ? 'cat2.png' : 'alice2.png';
+
+        
+        animationInterval = setInterval(() => {
             characterImage.src = `images/${toggle ? image1 : image2}`;
             toggle = !toggle;
-        }, 500);
+        }, 1000);
     }
 
-    function bindDiceRoll() {
+    function bindButtons() {
         const rollDiceBtn = document.querySelector('#rollDice');
-        rollDiceBtn.addEventListener('click', throwDice);
+        const passBtn = document.querySelector('#pass');
+        const quitButton = document.querySelector('#quit');
+
+        rollDiceBtn.addEventListener('click', throwDice); 
+        passBtn.addEventListener('click', switchPlayer); 
+        quitButton.addEventListener('click', resetGame); 
     }
 
     function throwDice() {
         const dice1 = document.querySelector('#dice1');
         const dice2 = document.querySelector('#dice2');
         const scoreBoard = document.querySelector('#score');
-
-        // 添加摇晃动画
+        const message = document.querySelector('#message');
+    
+        
         dice1.classList.add('shaking');
         dice2.classList.add('shaking');
-
+    
         setTimeout(() => {
-            // 移除摇晃动画类
+        
             dice1.classList.remove('shaking');
             dice2.classList.remove('shaking');
-
-            // 掷骰子
+    
+          
             gameData.roll1 = Math.floor(Math.random() * 6) + 1;
             gameData.roll2 = Math.floor(Math.random() * 6) + 1;
-
-            // 更新骰子图片
+            gameData.rollSum = gameData.roll1 + gameData.roll2;
+    
+            
             dice1.src = gameData.dice[gameData.roll1 - 1];
             dice2.src = gameData.dice[gameData.roll2 - 1];
-
-            // 更新分数并显示
-            updateScore();
+    
+            if (gameData.rollSum === 2) {
+                
+                message.innerHTML = `<p>Oh snap! Snake eyes! ${gameData.players[gameData.currentPlayerIndex]} loses all their points!</p>`;
+                gameData.scores[gameData.currentPlayerIndex] = 0; 
+                scoreBoard.innerHTML = `Scores: Alice - ${gameData.scores[0]}, Cheshire Cat - ${gameData.scores[1]}`;
+                setTimeout(() => switchPlayer(), 2000); 
+            } else if (gameData.roll1 === 1 || gameData.roll2 === 1) {
+                
+                message.innerHTML = `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[1 - gameData.currentPlayerIndex]}.</p>`;
+                setTimeout(() => switchPlayer(), 2000); 
+            } else {
+                
+                const rollSum = gameData.roll1 + gameData.roll2;
+                gameData.scores[gameData.currentPlayerIndex] += rollSum;
+                message.textContent = `${gameData.players[gameData.currentPlayerIndex]} rolled a total of ${rollSum}!`;
+                scoreBoard.innerHTML = `Scores: Alice - ${gameData.scores[0]}, Cheshire Cat - ${gameData.scores[1]}`;
+            }
+    
+            
             checkWinningCondition();
-        }, 500); // 与摇晃动画时间一致
+        }, 500); 
     }
-
-    function updateScore() {
-        const scoreBoard = document.querySelector('#score');
-
-        if (gameData.roll1 === 1 || gameData.roll2 === 1) {
-            // 掷出 1 丢失回合
-            scoreBoard.innerHTML = `<p>Oh no! ${gameData.players[gameData.currentPlayerIndex]} rolled a 1 and lost the turn!</p>`;
-            switchPlayer();
-        } else {
-            const rollSum = gameData.roll1 + gameData.roll2;
-            gameData.scores[gameData.currentPlayerIndex] += rollSum;
-            scoreBoard.innerHTML = `Scores: Alice - ${gameData.scores[0]}, Cheshire Cat - ${gameData.scores[1]}`;
-        }
-    }
+    
 
     function checkWinningCondition() {
         if (gameData.scores[gameData.currentPlayerIndex] >= gameData.gameEnd) {
-            sectionPigGame.innerHTML = `
-                <h2>${gameData.players[gameData.currentPlayerIndex]} wins with ${gameData.scores[gameData.currentPlayerIndex]} points!</h2>
-                <button id="restartGame">Start a New Game</button>
+            sectionPigGame.innerHTML += `
+                <div id="result">
+                    <h2>${gameData.players[gameData.currentPlayerIndex]} wins with ${gameData.scores[gameData.currentPlayerIndex]} points!</h2>
+                    <button id="restartGame">Start a New Game</button>
+                </div>
             `;
-            document.querySelector('#restartGame').addEventListener('click', () => location.reload());
+            document.querySelector('#restartGame').addEventListener('click', restartGame);
         }
     }
 
     function switchPlayer() {
-        gameData.currentPlayerIndex = 1 - gameData.currentPlayerIndex;
-        document.querySelector('#currentPlayer').textContent = `Roll the dice for ${gameData.players[gameData.currentPlayerIndex]}`;
+        gameData.currentPlayerIndex = 1 - gameData.currentPlayerIndex; 
+        updateGameScreen(); 
+        updateCharacterAnimation(); 
+    }
+
+    function resetGame() {
+        location.reload(); 
+    }
+
+    function restartGame() {
+        gameData.scores = [0, 0]; 
+        gameData.currentPlayerIndex = 1 - gameData.currentPlayerIndex; 
+        updateGameScreen(); 
+        updateCharacterAnimation(); 
+        bindButtons(); 
     }
 
     btnAlice.addEventListener('click', () => switchScene('Alice'));
