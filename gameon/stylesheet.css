@@ -1,13 +1,14 @@
 body{
     background-image:url(images/background.png);
-        margin: 0; 
+        margin: 0;
         padding: 0;
-        background-position: center; 
+        background-position: center;
         background-repeat: no-repeat;
         height: 80vh;
         background-color: #1F2060;
-        
+       
 }
+
 
 section article h1{
     font-family: "Knewave", system-ui;
@@ -17,12 +18,15 @@ section article h1{
     text-align: center;
     padding: 50px;
 
+
 }
+
 
 #intro{
     display: flex;
     justify-content: center;
 }
+
 
 #intro div{
     display: block;
@@ -34,9 +38,11 @@ section article h1{
     padding-bottom: 30px;
 }
 
+
 #player{
     display: flex;
 }
+
 
 #player button{
     display: block;
@@ -54,10 +60,12 @@ section article h1{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+
 #player button:hover{
 background-color: rgb(28, 28, 28);
 color: aliceblue;
 }
+
 
 #piggame{
     display: none;
@@ -65,7 +73,10 @@ color: aliceblue;
 
 
 
-#piggame #game{
+
+
+
+/* #piggame #game{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -73,78 +84,104 @@ color: aliceblue;
     height: 100%;
     width: 100%;
     position: absolute;
-}
+} */
+
 
 #piggame #game p{
     display: block;
-    font-size: 2em;
+    font-size: 25px;
     font-family: "Sour Gummy", sans-serif;
     background-color: #596C9C;
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     color: #10102e;
+   
+}
+
+
+#piggame #game #characterName{
     border: solid 2px #10102e;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    justify-self: flex-start;
-    
+    width: 200px;
+    text-align: center;
+    position: absolute;
+    bottom: 20%;
+    left: 85%;
+
+
 }
+
 
 #piggame #game #table{
-    position: fixed;
-    top: 200px;
-    left: 1%;
+    position: absolute;
+    left: -15%;
     z-index: -1;
+    bottom: 150px;
+
 
 }
+
 
 #piggame #game .animation{
-    position: fixed;
+    left: 80%;
+    top: 200px;
+    position: absolute;
     z-index: 0;
-    left: 50%;
-    top: 280px;
 }
+
+
 
 
 #piggame #game #dice1{
-    position: fixed;
-    bottom: -900px;
+    position: absolute;
     z-index: 0;
-    left: 1200px;
+    right: -100px;
+    top: 700px;
 }
+
 
 #piggame #game #dice2{
-    position: fixed;
-    bottom: -900px;
+    position: absolute;
     z-index: 0;
-    left: 1000px;
+    right: 200px;
+    top: 700px;
 }
 
-#piggame #game p{
-    position: fixed;
-    z-index: 0;
-    top: 950px;
-    left: 55%;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .hidden{
     display: none;
 }
 
 
+
+
 #piggame div{
     display: block;
     background-color: #596C9C;
-    padding: 10px;
+    padding: 20px;
     width: 350px;
     border-radius: 50px;
     border: solid #1F2060 2px;
-    position: fixed;
     z-index: 1;
-    margin-top: 50px;
-    position: fixed;
-    right: 100px;
+    position: absolute;
+    left: 120%;
     text-align: center;
+    top: 30px;
 }
+
+
 
 
 #piggame div h2{
@@ -153,6 +190,7 @@ color: aliceblue;
     font-weight: 10;
     color: #10102e;
 }
+
 
 #piggame div button{
     padding: 15px;
@@ -163,21 +201,30 @@ color: aliceblue;
     font-size: 15px;
 }
 
-#piggame div p{
+
+/* #piggame div{
     border-radius: 20px;
     font-family: "Sour Gummy", sans-serif;
     color: #10102e;
     font-size: 1em;
-}
+} */
+
+
 
 
 #result{
-    position: fixed;
+    position: absolute;
     left: 300px;
 }
-/* #piggame #game{
-    display: none;
-} */
+
+
+#piggame #game{
+    display: block;
+    width: 1000px;
+    height: 1150px;
+    position: absolute;
+}
+
 
 .hidden {
     opacity: 0;
@@ -185,16 +232,19 @@ color: aliceblue;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+
 .visible {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* 骰子图片变化的动效 */
+
+
 #dice1, #dice2 {
     animation: shakeDice 0.5s ease-in-out;
 }
+
 
 @keyframes shakeDice {
     0% { transform: rotate(0); }
@@ -203,3 +253,4 @@ color: aliceblue;
     75% { transform: rotate(10deg); }
     100% { transform: rotate(0); }
 }
+
