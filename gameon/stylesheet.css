@@ -109,8 +109,8 @@ color: aliceblue;
     width: 200px;
     text-align: center;
     position: absolute;
-    bottom: 20%;
-    left: 85%;
+    top: 750px;
+    left: 90%;
 }
 
 
@@ -118,15 +118,15 @@ color: aliceblue;
     position: absolute;
     left: -15%;
     z-index: -1;
-    bottom: 150px;
+    top:50%;
 
 
 }
 
 
 #piggame #game .animation{
-    left: 80%;
-    top: 200px;
+    left: 90%;
+    top: 150px;
     position: absolute;
     z-index: 0;
 }
@@ -137,16 +137,16 @@ color: aliceblue;
 #piggame #game #dice1{
     position: absolute;
     z-index: 0;
-    right: -100px;
-    top: 700px;
+    left: 90%;
+    top: 600px;
 }
 
 
 #piggame #game #dice2{
     position: absolute;
     z-index: 0;
-    right: 200px;
-    top: 700px;
+    left: 110%;
+    top: 600px;
 }
 
 .hidden{
@@ -165,7 +165,7 @@ color: aliceblue;
     border: solid #1F2060 2px;
     z-index: 1;
     position: absolute;
-    left: 120%;
+    left: 140%;
     text-align: center;
     top: 30px;
 }
@@ -220,9 +220,10 @@ color: aliceblue;
 
 #piggame #game{
     display: block;
-    width: 1000px;
-    height: 1150px;
+    width: 50%;
+    height: 100%;
     position: absolute;
+    margin: auto;
 }
 
 
