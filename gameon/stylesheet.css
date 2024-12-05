@@ -11,6 +11,7 @@ body{
 
 
 section article h1{
+    display: block;
     font-family: "Knewave", system-ui;
     color: aliceblue;
     font-size:4em;
@@ -23,7 +24,7 @@ section article h1{
 
 
 #intro{
-    display: flex;
+   display: block;
     justify-content: center;
 }
 
@@ -36,11 +37,14 @@ section article h1{
     line-height: 40px;
     color: aliceblue;
     padding-bottom: 30px;
+    margin: auto;
 }
 
 
 #player{
     display: flex;
+    margin: auto;
+    width:60%;
 }
 
 
@@ -107,8 +111,6 @@ color: aliceblue;
     position: absolute;
     bottom: 20%;
     left: 85%;
-
-
 }
 
 
@@ -147,19 +149,6 @@ color: aliceblue;
     top: 700px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .hidden{
     display: none;
 }
@@ -167,7 +156,7 @@ color: aliceblue;
 
 
 
-#piggame div{
+#game>div{
     display: block;
     background-color: #596C9C;
     padding: 20px;
@@ -179,6 +168,25 @@ color: aliceblue;
     left: 120%;
     text-align: center;
     top: 30px;
+}
+
+#result{
+    display: block;
+    position: absolute;
+    left: 15%;
+    top: 30px;
+    background-color: #596C9C;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+    border-radius: 50px;
+    border: solid #1F2060 2px;
+    z-index: 1;
+    text-align: center;
+}
+
+#result button{
+    margin: auto;
 }
 
 
@@ -208,14 +216,6 @@ color: aliceblue;
     color: #10102e;
     font-size: 1em;
 } */
-
-
-
-
-#result{
-    position: absolute;
-    left: 300px;
-}
 
 
 #piggame #game{
