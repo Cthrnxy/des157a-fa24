@@ -1,0 +1,191 @@
+body{
+    background: hsla(26, 42%, 14%, 1);
+    
+    background: linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
+    
+    background: -moz-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
+    
+    background: -webkit-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(2890, 18%, 3%, 1) 100%);
+    
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#332215", endColorstr="#0070A", GradientType=1 );
+    }
+    
+    #mobile{
+        width: 390px;
+        height: 844px;
+        margin: 0;
+        position: relative;
+    }
+    
+    #musicControl{
+        padding: 0;
+        margin: 0;
+        width: 25px;
+        height: 25px;
+        background-color: #FFFB75;
+        border-radius: 100%;
+        
+    }
+    
+    #musicControl a{
+        text-decoration: none;
+        display: block;
+        margin: auto;
+        padding: auto;
+        color: #8bd8ff;
+    }
+    
+    #musicControl i{
+        display: block;
+        text-align: center;
+        line-height: 0.6cm;
+    }
+    
+    #title h1{
+        font-family: "ZCOOL XiaoWei", sans-serif;
+        color:#8bd8ff;
+        font-size: 3.5em;
+        margin: auto;
+        text-align: center;
+        z-index: 1;
+        top:15px ;
+        padding: 10px;
+    }
+    
+    #title h2{
+        font-family: "Playwrite BE VLG", cursive;
+        color: #fecf88;
+        position:absolute;
+        font-size: 2em;
+        font-weight: 300;
+        top: 30px;
+        z-index: 2;
+    }
+    
+    #window img{
+        width:100%;
+        height:40%;
+        position: relative;
+        z-index: 1;
+    }
+    
+    #sceneMb img{
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        z-index:0;
+        width: 300px;
+        position: absolute;
+        animation: slide-in 0.5s forwards;
+    }
+    
+    @keyframes slide-in {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+    
+    #city h3{
+        font-family: "ZCOOL XiaoWei", sans-serif;
+        color:#8bd8ff;
+        position: absolute;
+        top: 42%;
+        z-index: 2;
+        font-size: 2em;
+    }
+    
+    #city p{
+        font-family: "Playwrite BE VLG", cursive;
+        color: #fecf88;
+        position: absolute;
+        top: 45%;
+        z-index: 2;
+    }
+    
+    #ticketChange{
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        z-index:1;
+    }
+    
+    #next{
+        position: absolute;
+        left: 115%;
+        z-index: 2;
+        top: 30%;
+    }
+    
+    #prev{
+        position: absolute;
+        left: -25%;
+        z-index: 2;
+        top: 30%;
+    }
+    
+    #ticketChange a{
+        font-size: 2em;
+        color:#FFFB75;
+        background-color: none;
+    }
+    
+    #dailyPictureMb{
+        width: 100%;
+        position: absolute;
+        animation: slide-in 0.5s forwards;
+    }
+    
+    #dailyPictureMb img{
+        margin-top: 5%;
+        margin-left:20% ;
+        width: 60%;
+        height: 300px;
+        border-radius: 20px;
+    }
+    
+    footer {
+        display: grid;
+        position: absolute;
+        left: 0;
+        bottom: -150px;
+        width: 100%;
+        background-color: #947e67;
+        color: #333;
+        padding: 20px
+    }
+    
+    footer>p{
+        font-family: "Delius", cursive;
+        color: #8bd8ff;
+        font-size: 1em;
+        grid-column: 1 / -1;
+      }
+    
+    #sources{
+        font-size: 0.5em;
+        text-align: center;
+        background-color: #4e7a91;
+        color:#fecf88 ;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+    }
+    
+    #sources:hover{
+        background-color: #8bd8ff;
+        color: #333;
+    }
+      
+      address{
+        font-family: "Libre Baskerville", serif;
+        color: #21B2FF;
+        display: flex;
+        font-size: 20px;
+        grid-column: 2;
+        margin: 20px;
+      }
+    
+      address .Contact a{
+        color:#21B2FF;
+        margin-right: 10px;
+        text-align: right;
+      }
