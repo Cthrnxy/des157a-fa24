@@ -131,7 +131,6 @@ body{
     #dailyPictureMb{
         width: 100%;
         position: absolute;
-        animation: slide-in 0.5s forwards;
     }
     
     #dailyPictureMb img{
@@ -140,6 +139,13 @@ body{
         width: 60%;
         height: 300px;
         border-radius: 20px;
+        transition: opacity 0.5s ease-in-out;
+        animation: slide-in 0.5s forwards;
+        
+    }
+
+    #dailyPictureMb img.fade-in{
+        opacity: 1;
     }
     
     footer {
