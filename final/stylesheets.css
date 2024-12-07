@@ -167,22 +167,17 @@ body{
       }
     
     #sources{
-        font-size: 0.5em;
+        font-size: 0.8em;
         text-align: center;
         background-color: #4e7a91;
         color:#fecf88 ;
         padding: 10px;
         text-decoration: none;
         border-radius: 10px;
-    }
-    
-    #sources:hover{
-        background-color: #8bd8ff;
-        color: #333;
+        font-family: "Delius", cursive;
     }
       
       address{
-        font-family: "Libre Baskerville", serif;
         color: #21B2FF;
         display: flex;
         font-size: 20px;
