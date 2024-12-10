@@ -1,47 +1,41 @@
-body{
+body {
     background: hsla(26, 42%, 14%, 1);
-    
     background: linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
-    
     background: -moz-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
-    
-    background: -webkit-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(2890, 18%, 3%, 1) 100%);
-    
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#332215", endColorstr="#0070A", GradientType=1 );
-    }
+    background: -webkit-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#332215", endColorstr="#0070A", GradientType=1);
+}
 
-
-#title2{
+#title2 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 100px;
-  }
-  
-#title2 h1{
-    font-family:"ZCOOL XiaoWei", sans-seri ;
+}
+
+#title2 h1 {
+    font-family: "ZCOOL XiaoWei", sans-serif;
     font-size: 120px;
     color: #8bd8ff;
     position: absolute;
     z-index: 10;
-    top:-70px;
-  }
-  
-#title2 h2{
+    top: -70px;
+}
+
+#title2 h2 {
     font-family: "Playwrite BE VLG", cursive;
     font-size: 70px;
-    color:#fecf88;
+    color: #fecf88;
     position: relative;
     top: 30px;
     left: -10px;
     z-index: 11;
-  }
+}
 
-#picture{
+#picture {
     display: flex;
 }
 
-
-#windowSceneDt{
+#windowSceneDt {
     position: relative;
     top: 15%;
     left: 0;
@@ -49,24 +43,24 @@ body{
     width: 60%;
 }
 
-#windowDt{
+#windowDt {
     position: absolute;
     z-index: 1;
 }
 
-#sceneDt img{
+#sceneDt img {
     width: 540px;
     height: 515px;
 }
 
-#sceneDt{
+#sceneDt {
     position: absolute;
     z-index: 0;
     top: 11%;
     left: 260px;
 }
 
-#movingScene{
+#movingScene {
     display: none;
     z-index: -5;
     position: absolute;
@@ -79,130 +73,123 @@ body{
         transform: translateX(0);
     }
     to {
-        transform: translateX(-75%); /* 移动到原始宽度的一半，确保平滑循环 */
+        transform: translateX(-75%);
     }
 }
 
-#movingScene img{
+#movingScene img {
     height: 550px;
 }
 
-#city{
+#city {
     display: flex;
     position: absolute;
     z-index: 2;
 }
 
-#city h3{
+#city h3 {
     font-family: "ZCOOL XiaoWei", sans-serif;
     color: #8bd8ff;
     font-size: 5em;
     position: absolute;
-    top:600px;
+    top: 600px;
     left: 100px;
     width: 200px;
 }
 
-#city h4{
+#city h4 {
     font-family: "Playwrite BE VLG", cursive;
     color: #fecf88;
     font-size: 2.5em;
     position: absolute;
-    top:675px;
+    top: 675px;
     left: 80px;
 }
 
-#city a{
+#city a {
     text-decoration: none;
     background-color: #4e7a91;
-    padding:10px ;
+    padding: 10px;
     width: 270px;
     height: 45px;
-    font-family:"Delius", cursive ;
+    font-family: "Delius", cursive;
     color: #fecf88;
     font-size: 1.5em;
     text-align: center;
     border-radius: 30px;
     position: absolute;
-    top:720px;
+    top: 720px;
     left: 700px;
     transition: background-color 1s ease;
 }
 
-#city a:hover{
+#city a:hover {
     background-color: #fecf88;
     color: #333;
-    
 }
 
 /* 票和日常照片 */
 
-#section1{
+#section1 {
     z-index: 10;
     width: 40%;
     height: 885px;
     position: relative;
-    background: hsla(26, 42%, 14%, 1);  
+    background: hsla(26, 42%, 14%, 1);
     background: linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
     background: -moz-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
-    background: -webkit-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(2890, 18%, 3%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#332215", endColorstr="#0070A", GradientType=1 );
+    background: -webkit-linear-gradient(230deg, hsla(26, 42%, 14%, 1) 45%, hsla(280, 18%, 3%, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#332215", endColorstr="#0070A", GradientType=1);
 }
 
-#dailyPictureDt{
-    margin: 40px 0px 50px 100px;
-    /* position: absolute;
-    top: 25%;
-    left: 20%; */
+#dailyPictureDt {
+    margin: 40px 0 50px 100px;
 }
 
-#dailyPictureDt img{
+#dailyPictureDt img {
     width: fit-content;
-    padding: 8px; /* 调整为所需的画框厚度 */
-    border: 20px solid #2f2a1b; /* 仿金属或木质画框颜色 */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* 给画框添加阴影以增强立体感 */
-    background-color: #fff; /* 画框的背景色 */
-    margin: 20px; /* 根据需要调整外边距 */
-    width:370px;
+    padding: 8px;
+    border: 20px solid #2f2a1b;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    margin: 20px;
+    width: 370px;
     height: 500px;
     border-radius: 80px;
-    box-shadow: inset 0 0 5px grey; 
+    box-shadow: inset 0 0 5px grey;
 }
 
-#ticketDt{
-    /* position: absolute;
-    left: 5%; */
-    margin: 15px 0px 0px 40px;
+#ticketDt {
+    margin: 15px 0 0 40px;
 }
 
 /* Train moving */
 .track {
     width: 100%;
-    height: 80px; /* 轨道的高度，确保比火车的高度要大 */
-    position: relative; /* 相对定位 */
-    background: #333; /* 轨道的背景颜色 */
-    border: 1px solid #333; /* 轨道的边框 */
-    overflow: hidden; /* 隐藏超出部分 */
+    height: 80px;
+    position: relative;
+    background: #333;
+    border: 1px solid #333;
+    overflow: hidden;
     display: flex;
-    justify-content: flex-end; /* 将内容对齐到右侧 */
+    justify-content: flex-end;
 }
 
 .train {
-    position: absolute; /* 绝对定位 */
-    top: -5px; /* 火车相对顶部的位置，稍微向下调整以居中显示 */
-    width: 560px; /* 火车的宽度 */
-    height: 80px; /* 火车的高度 */
-    background-image: url('/final/images/train.png'); /* 使用你的图片作为火车 */
-    background-size: cover; /* 背景图像覆盖整个元素 */
-    right: 0; /* 初始位置在轨道右端 */
-    transition: right 0.2s ease-out; /* 平滑移动效果 */
+    position: absolute;
+    top: -5px;
+    width: 560px;
+    height: 80px;
+    background-image: url('/final/images/train.png');
+    background-size: cover;
+    right: 0;
+    transition: right 0.2s ease-out;
     z-index: 3;
 }
 
-
-#train h4{
+#train h4 {
     font-family: "Sriracha", cursive;
-    color:#8bd8ff;
+    color: #8bd8ff;
     font-size: 2em;
     position: absolute;
     left: 5%;
@@ -210,64 +197,62 @@ body{
     z-index: 4;
 }
 
-#trainMoving h4{
+#trainMoving h4 {
     position: absolute;
     top: -20px;
     left: 35px;
-    color:antiquewhite;
+    color: antiquewhite;
     font-family: "Sriracha", cursive;
     font-size: 1.4em;
-
 }
 
-footer{
+footer {
     display: flex;
     padding: 10px;
     background-color: #947e67;
     justify-content: space-evenly;
-  }
-  
-  footer>h4{
+}
+
+footer > h4 {
     font-family: "Sriracha", cursive;
     color: #8bd8ff;
     font-size: 20px;
     margin: 3%;
-  }
+}
 
-  #sources{
+#sources {
     width: 220px;
     font-size: 18px;
     text-align: center;
     background-color: #4e7a91;
-    color:#fecf88;
+    color: #fecf88;
     padding: 10px;
     text-decoration: none;
     border-radius: 30px;
     font-family: "Delius", cursive;
     height: 30px;
     align-self: center;
-    justify-self:flex-end;
+    justify-self: flex-end;
     transition: background-color 1s ease;
-  }
+}
 
-  #sources:hover{
+#sources:hover {
     background-color: #8bd8ff;
     color: #2f2a1b;
-  }
-  
-  address{
+}
+
+address {
     font-family: "Libre Baskerville", serif;
     color: #8bd8ff;
     display: flex;
     margin: 3%;
     font-size: 20px;
-  }
-  
-  address .Contact a i{
-    color:#8bd8ff;
-    margin-right: 10px;
-  }
+}
 
+address .Contact a i {
+    color: #8bd8ff;
+    margin-right: 10px;
+}
 
 /* 轮播动画效果 */
 
@@ -277,39 +262,47 @@ footer{
     position: relative;
     margin: 0 auto;
     top: 40px;
-  }
-  .out .inner {
+}
+
+.out .inner {
     width: 100%;
     height: 100%;
-  }
-  .out .inner .img {
+}
+
+.out .inner .img {
     width: 230px;
     height: 150px;
     position: absolute;
     transition: 0.3s;
-  }
-  .out .inner .img img {
+}
+
+.out .inner .img img {
     width: 100%;
     height: 100%;
-  }
-  .out .arrow {
+}
+
+.out .arrow {
     font-size: 32px;
-  }
-  .out .arrow i {
+}
+
+.out .arrow i {
     display: block;
     position: absolute;
     color: #fff;
     z-index: 9999;
     cursor: pointer;
     top: 60px;
-  }
-  .out .arrow .left {
+}
+
+.out .arrow .left {
     left: -20px;
-  }
-  .out .arrow .right {
+}
+
+.out .arrow .right {
     left: 627px;
-  }
-  .out .button {
+}
+
+.out .button {
     width: 175px;
     height: 15px;
     position: absolute;
@@ -317,8 +310,9 @@ footer{
     left: 47%;
     top: 180px;
     transform: translateX(-50%);
-  }
-  .out .button p {
+}
+
+.out .button p {
     border-radius: 100%;
     width: 10px;
     height: 10px;
@@ -326,35 +320,38 @@ footer{
     margin: 0 5px;
     cursor: pointer;
     background-color: silver;
-  }
+}
 
-  .out .button p:first-child {
+.out .button p:first-child {
     background-color: #8bd8ff;
-  }
-  .out #last {
+}
+
+.out #last {
     transform: translateX(0);
     z-index: 9;
     opacity: 1;
-  }
-  .out #first {
+}
+
+.out #first {
     transform: translateX(200px) scale(1.3);
     z-index: 99;
     opacity: 1;
-  }
-  .out #second {
+}
+
+.out #second {
     transform: translateX(400px);
     z-index: 9;
     opacity: 1;
-  }
-  .out #left {
+}
+
+.out #left {
     transform: translateX(-100px);
     z-index: 1;
     opacity: 0;
-  }
-  .out #right {
+}
+
+.out #right {
     transform: translateX(500px);
     z-index: 1;
     opacity: 0;
-  }
-
-
+}
