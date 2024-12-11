@@ -180,7 +180,7 @@ body {
     top: -5px;
     width: 560px;
     height: 80px;
-    background-image: url('final/images/train.png');
+    background-image: url('https://cthrnxy.github.io/des157a-fa24/final/images/train.png');
     background-size: cover;
     right: 0;
     transition: right 0.2s ease-out;
