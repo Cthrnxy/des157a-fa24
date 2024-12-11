@@ -36,7 +36,7 @@
 
     // 定义图片组
     const sceneImages = {
-        guangzhou: ["guangzhou1.png", "guangzhou2.png", "guangzhou4.png", "guangzhou5.jpg", "guangzhou6.jpg", "guangzhou1.png"],
+        guangzhou: ["guangzhou1.png", "guangzhou2.png", "guangzhou4.png", "guangzhou5.JPG", "guangzhou6.JPG", "guangzhou1.png"],
         chengdu: ["chengdu.png", "chengdu.png", "chengdu.png", "chengdu.png", "chengdu.png"],
         guiyang: ["guiyang.png", "guiyang.png", "guiyang.png", "guiyang.png", "guiyang.png"],
         hongkong: ["hongkong1.png", "hongkong2.png", "hongkong1.png", "hongkong2.png", "hongkong1.png"]
@@ -44,7 +44,7 @@
 
 
     const dailyImages = {
-        guangzhou: ["gzdaily1.jpg", "gzdaily2.jpg", "gzdaily3.jpg", "gzdaily4.png", "gzdaily5.png", "gzdaily6.png"],
+        guangzhou: ["gzdaily1.JPG", "gzdaily2.JPG", "gzdaily3.JPG", "gzdaily4.png", "gzdaily5.png", "gzdaily6.png"],
         chengdu: ["cddaily1.jpg", "cddaily2.jpg", "cddaily3.jpg", "cddaily1.jpg", "cddaily2.jpg"],
         guiyang: ["gydaily1.jpg", "gydaily2.jpg", "gydaily3.jpg", "gydaily1.jpg", "gydaily2.jpg"],
         hongkong: ["hkdaily1.jpg", "hkdaily2.jpg", "hkdaily3.jpg", "hkdaily1.jpg", "hkdaily2.jpg"]
