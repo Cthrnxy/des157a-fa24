@@ -13,8 +13,8 @@
     const dailyPictureDt = document.querySelector("#dailyPictureDt img");
     const movingScene = document.getElementById("movingScene");
     const backButton = document.getElementById("back");
-    let titlesDt = ["广州", "贵阳", "成都", "香港"];
-    let titlesEDt = ["Guangzhou", "Guiyang", "Chengdu", "Hongkong"];
+    let titlesDt = ["贵阳", "成都", "香港"];
+    let titlesEDt = ["Guiyang", "Chengdu", "Hongkong"];
 
 
 
@@ -86,25 +86,36 @@
 
 
     // 切换到上一张 tkt
-    function prev() {
-        imgPositions.unshift(imgPositions.pop());
-        currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-        updateSelectedGroup(); // 更新图片组
-        updateButtons(); // 更新圆点状态
-        updateTitles(); // 更新标题
-        initialize();
+function prev() {
+    imgPositions.unshift(imgPositions.pop());
+    currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+    updateSelectedGroup(); // 更新图片组
+    updateButtons(); // 更新圆点状态
+
+    if (isTrainAnimationComplete) {
+        updateTitles(); // 火车动画完成后更新标题
+    } else {
+        console.log("火车动画未完成，标题未更新");
     }
 
+    initialize();
+}
 
-    // 切换到下一张 tkt
-    function next() {
-        imgPositions.push(imgPositions.shift());
-        currentIndex = (currentIndex + 1) % buttons.length;
-        updateSelectedGroup(); // 更新图片组
-        updateButtons(); // 更新圆点状态
-        updateTitles(); // 更新标题
-        initialize();
+// 切换到下一张 tkt
+function next() {
+    imgPositions.push(imgPositions.shift());
+    currentIndex = (currentIndex + 1) % buttons.length;
+    updateSelectedGroup(); // 更新图片组
+    updateButtons(); // 更新圆点状态
+
+    if (isTrainAnimationComplete) {
+        updateTitles(); // 火车动画完成后更新标题
+    } else {
+        console.log("火车动画未完成，标题未更新");
     }
+
+    initialize();
+}
 
 
     // 更新图片框中的图片
@@ -167,7 +178,7 @@
                 dailyPictureDt.classList.remove("slide-in");
             }, 1000); // 与 CSS 过渡时间一致
         }, 1000); // 等待当前图片滑出后更新
-    }, 2000); // 每 3 秒切换一次图片
+    }, 1500); // 每 1.5 秒切换一次图片
 }
 
 
@@ -179,42 +190,69 @@
 
     // 火车移动逻辑
     function moveTrain() {
-        if (!trainMoving) return;
-   
-        const trainPosition = parseInt(train.style.left || track.offsetWidth, 10);
-        const newTrainPosition = trainPosition - 5;
-   
-        if (newTrainPosition > 0) {
-            train.style.left = `${newTrainPosition}px`; // 更新火车位置
-            requestAnimationFrame(moveTrain); // 继续动画
-        } else {
-            // 火车到达最左端，完成操作
-            train.style.left = `${track.offsetWidth}px`; // 重置火车位置到轨道右侧
-            movingScene.style.display = "none"; // 隐藏车窗动画
-            sceneDt.parentElement.style.display = "block"; // 恢复普通图片显示
-   
-            if (!isTrainAnimationComplete) {
-                isTrainAnimationComplete = true; // 标记动画完成
-                console.log("火车动画完成");
-   
-                // 删除广州图片组和标题
-                if (sceneImages.guangzhou && dailyImages.guangzhou) {
-                    delete sceneImages.guangzhou;
-                    delete dailyImages.guangzhou;
-                    console.log("广州图片组已删除");
-                }
-   
-                if (titlesDt.includes("广州")) {
-                    titlesDt.shift(); // 删除广州标题
-                    titlesEDt.shift(); // 删除 Guangzhou 标题
-                    console.log("广州标题已删除");
-                }
-   
-                // 更新标题为当前圆点对应的内容
-                updateTitles();
+    if (!trainMoving) return;
+
+    const trainPosition = parseInt(train.style.left || track.offsetWidth, 10);
+    const newTrainPosition = trainPosition - 5;
+
+    if (newTrainPosition > 0) {
+        train.style.left = `${newTrainPosition-20}px`; // 更新火车位置
+        requestAnimationFrame(moveTrain); // 继续动画
+    } else {
+        // 火车到达最左端，完成操作
+        train.style.left = `${track.offsetWidth - 560}px`; // 重置火车位置到轨道右侧
+        movingScene.style.display = "none"; // 隐藏车窗动画
+        sceneDt.parentElement.style.display = "block"; // 恢复普通图片显示
+
+        if (!isTrainAnimationComplete) {
+            isTrainAnimationComplete = true; // 标记动画完成
+            console.log("火车动画完成");
+
+            // 删除广州图片组
+            if (sceneImages.guangzhou && dailyImages.guangzhou) {
+                delete sceneImages.guangzhou;
+                delete dailyImages.guangzhou;
+                console.log("广州图片组已删除");
+            }
+
+            // 更新标题为当前圆点对应的内容
+            const h3 = document.querySelector("#city h3");
+            const h4 = document.querySelector("#city h4");
+
+            if (titlesDt[currentIndex] && titlesEDt[currentIndex]) {
+                h3.textContent = titlesDt[currentIndex];
+                h4.textContent = titlesEDt[currentIndex];
+                console.log(`标题已更新为: ${titlesDt[currentIndex]}, ${titlesEDt[currentIndex]}`);
+            } else {
+                console.error("未找到匹配的标题内容");
             }
         }
     }
+}
+
+    
+    function updateTitles() {
+        const h3 = document.querySelector("#cityName h3");
+        const h4 = document.querySelector("#cityName h4");
+    
+        if (titlesDt[currentIndex] && titlesEDt[currentIndex]) {
+            h3.textContent = titlesDt[currentIndex];
+            h4.textContent = titlesEDt[currentIndex];
+            console.log(`标题已更新为: ${titlesDt[currentIndex]}, ${titlesEDt[currentIndex]}`);
+        }
+    }
+    
+    const trainSound = document.getElementById("trainSound");
+
+function playTrainSound() {
+    trainSound.currentTime = 0; // 从头开始播放
+    trainSound.play().catch(error => console.error("音效播放失败:", error));
+}
+
+function stopTrainSound() {
+    trainSound.pause();
+    trainSound.currentTime = 0; // 停止并重置音效
+}
    
    
 
@@ -226,6 +264,7 @@
         movingScene.style.display = "block"; // 显示车窗动画
         sceneDt.parentElement.style.display = "none"; // 隐藏普通图片
         requestAnimationFrame(moveTrain);
+        playTrainSound();
     });
 
 
@@ -234,6 +273,7 @@
         trainMoving = false;
         movingScene.style.display = "none"; // 停止车窗动画
         sceneDt.parentElement.style.display = "block"; // 恢复普通图片
+        stopTrainSound(); // 松开鼠标时停止音效
     });
 
 
@@ -242,27 +282,13 @@
         trainMoving = false;
         movingScene.style.display = "none"; // 停止车窗动画
         sceneDt.parentElement.style.display = "block"; // 恢复普通图片
+        stopTrainSound(); // 鼠标离开时停止音效
     });
 
 
     // 返回广州图片组
     backButton.addEventListener("click", () => {
-        // 恢复广州图片组
-        if (!sceneImages.guangzhou) {
-            sceneImages.guangzhou = ["guangzhou1.png", "guangzhou2.png", "guangzhou4.png", "guangzhou5.jpg", "guangzhou6.jpg", "guangzhou1.png"];
-            dailyImages.guangzhou = ["gzdaily1.jpg", "gzdaily2.jpg", "gzdaily3.jpg", "gzdaily4.png", "gzdaily5.png", "gzdaily6.png"];
-            console.log("广州图片组已恢复");
-        }
-
-
-        // 重置状态
-        isTrainAnimationComplete = false;
-        selectedGroup = "guangzhou";
-        currentIndex = 0;
-        currentImageIndex = 0;
-        updateButtons(); // 更新圆点状态
-        updateImages(); // 显示广州图片组
-        startAutoSwitch(); // 开启自动切换
+        location.reload(); // 刷新页面恢复初始状态
     });
 
 
