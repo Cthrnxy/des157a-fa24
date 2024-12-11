@@ -189,7 +189,7 @@
             requestAnimationFrame(moveTrain); // 继续动画
         } else {
             // 火车到达最左端，完成操作
-            train.style.left = `${track.offsetWidth-560}px`; // 重置火车位置到轨道右侧
+            train.style.left = `${track.offsetWidth}px`; // 重置火车位置到轨道右侧
             movingScene.style.display = "none"; // 隐藏车窗动画
             sceneDt.parentElement.style.display = "block"; // 恢复普通图片显示
    
@@ -220,49 +220,29 @@
 
 
     // 长按轨道触发火车移动
-    const trainSound = document.getElementById("trainSound"); // 获取音效元素
+    track.addEventListener("mousedown", () => {
+        console.log("Track pressed, starting animation...");
+        trainMoving = true;
+        movingScene.style.display = "block"; // 显示车窗动画
+        sceneDt.parentElement.style.display = "none"; // 隐藏普通图片
+        requestAnimationFrame(moveTrain);
+    });
 
 
-function playTrainSound() {
-    trainSound.currentTime = 0; // 从头开始播放
-    trainSound.play().catch((error) => console.error("音效播放失败:", error));
-}
+    track.addEventListener("mouseup", () => {
+        console.log("Mouse released, stopping animation...");
+        trainMoving = false;
+        movingScene.style.display = "none"; // 停止车窗动画
+        sceneDt.parentElement.style.display = "block"; // 恢复普通图片
+    });
 
 
-function stopTrainSound() {
-    trainSound.pause(); // 暂停音效
-    trainSound.currentTime = 0; // 重置到开头
-}
-
-
-track.addEventListener("mousedown", () => {
-    console.log("Track pressed, starting animation...");
-    trainMoving = true;
-    movingScene.style.display = "block"; // 显示车窗动画
-    sceneDt.parentElement.style.display = "none"; // 隐藏普通图片
-    playTrainSound(); // 开始播放音效
-    requestAnimationFrame(moveTrain);
-});
-
-
-track.addEventListener("mouseup", () => {
-    console.log("Mouse released, stopping animation...");
-    trainMoving = false;
-    movingScene.style.display = "none"; // 停止车窗动画
-    sceneDt.parentElement.style.display = "block"; // 恢复普通图片
-    stopTrainSound(); // 停止播放音效
-});
-
-
-track.addEventListener("mouseleave", () => {
-    console.log("Mouse left track, stopping animation...");
-    trainMoving = false;
-    movingScene.style.display = "none"; // 停止车窗动画
-    sceneDt.parentElement.style.display = "block"; // 恢复普通图片
-    stopTrainSound(); // 停止播放音效
-});
-
-
+    track.addEventListener("mouseleave", () => {
+        console.log("Mouse left track, stopping animation...");
+        trainMoving = false;
+        movingScene.style.display = "none"; // 停止车窗动画
+        sceneDt.parentElement.style.display = "block"; // 恢复普通图片
+    });
 
 
     // 返回广州图片组
@@ -295,8 +275,6 @@ track.addEventListener("mouseleave", () => {
     initialize();
     startAutoSwitch();
 })();
-
-
 
 
 
