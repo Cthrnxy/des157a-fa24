@@ -196,7 +196,7 @@ function next() {
     const newTrainPosition = trainPosition - 5;
 
     if (newTrainPosition > 0) {
-        train.style.left = `${newTrainPosition-20}px`; // 更新火车位置
+        train.style.left = `${newTrainPosition-5}px`; // 更新火车位置
         requestAnimationFrame(moveTrain); // 继续动画
     } else {
         // 火车到达最左端，完成操作
