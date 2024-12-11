@@ -45,7 +45,7 @@
 
     const dailyImages = {
         guangzhou: ["gzdaily1.JPG", "gzdaily2.JPG", "gzdaily3.JPG", "gzdaily4.png", "gzdaily5.png", "gzdaily6.png"],
-        chengdu: ["cddaily1.jpg", "cddaily2.jpg", "cddaily3.jpg", "cddaily1.jpg", "cddaily2.jpg"],
+        chengdu: ["cddaily1.jpg", "cddaily2.jpg", "cddaily3.jpg", "cddaily4.jpg", "cddaily5.jpg"],
         guiyang: ["gydaily1.jpg", "gydaily2.jpg", "gydaily3.jpg", "gydaily1.jpg", "gydaily2.jpg"],
         hongkong: ["hkdaily1.jpg", "hkdaily2.jpg", "hkdaily3.jpg", "hkdaily1.jpg", "hkdaily2.jpg"]
     };

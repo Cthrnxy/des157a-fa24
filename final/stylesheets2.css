@@ -169,7 +169,7 @@ body {
     height: 80px;
     position: relative;
     background: #333;
-    border: 1px solid #333;
+    border-bottom: 1px solid #ffff;
     overflow: hidden;
     display: flex;
     justify-content: flex-end;
@@ -199,9 +199,9 @@ body {
 
 #trainMoving h4 {
     position: absolute;
-    top: -20px;
+    top: 15px;
     left: 35px;
-    color: antiquewhite;
+    color: aliceblue;
     font-family: "Sriracha", cursive;
     font-size: 1.4em;
 }
@@ -209,13 +209,13 @@ body {
 footer {
     display: flex;
     padding: 10px;
-    background-color: #947e67;
-    justify-content: space-evenly;
+    background-color: #333;
+    justify-content: last baseline;
 }
 
 footer > h4 {
     font-family: "Sriracha", cursive;
-    color: #8bd8ff;
+    color:aliceblue;
     font-size: 20px;
     margin: 3%;
 }
@@ -243,14 +243,14 @@ footer > h4 {
 
 address {
     font-family: "Libre Baskerville", serif;
-    color: #8bd8ff;
+    color: aliceblue;
     display: flex;
     margin: 3%;
     font-size: 20px;
 }
 
 address .Contact a i {
-    color: #8bd8ff;
+    color: aliceblue;
     margin-right: 10px;
 }
 
